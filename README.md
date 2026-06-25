@@ -3,7 +3,7 @@
 Nucleus is a high-performance, futuristic image processing console built entirely on the client side. Designed to balance sleek cyberpunk aesthetics with high-efficiency utility, Nucleus allows users to instantly optimize images or forcefully compress them below strict target thresholds without changing their native file formats or leaking raw assets to an external server.
 
 ## 🚀 Live Demo
-[Insert Your Vercel Live Deployment URL Here]
+[https://nucleus-compressor.vercel.app](https://nucleus-compressor.vercel.app)
 
 ## ⚡ Features
 - **Smart Optimize Mode:** Losslessly packs pixels and strips metadata payloads to reduce overhead cleanly.
