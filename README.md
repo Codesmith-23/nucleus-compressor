@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nucleus // Client-Side Image Optimizer & Compressor
 
-## Getting Started
+Nucleus is a high-performance, futuristic image processing console built entirely on the client side. Designed to balance sleek cyberpunk aesthetics with high-efficiency utility, Nucleus allows users to instantly optimize images or forcefully compress them below strict target thresholds without changing their native file formats or leaking raw assets to an external server.
 
-First, run the development server:
+## 🚀 Live Demo
+[Insert Your Vercel Live Deployment URL Here]
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ⚡ Features
+- **Smart Optimize Mode:** Losslessly packs pixels and strips metadata payloads to reduce overhead cleanly.
+- **File Size Compressor Mode:** Enforces a rigid manual maximum file limit (KB) to meet platform constraints, ensuring files stay strictly below the target limit.
+- **Format Preservation:** Keeps original file mime-types completely intact (PNG remains PNG, JPEG remains JPEG) instead of forcing aggressive WebP conversions.
+- **Cyberpunk Operator Console UI:** High-contrast tactical telemetry, crisp monospace layouts, and an atomic-pulsing engine interface engineered with Tailwind CSS.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛡️ 7-Point Hardening & Resource Architecture
+Nucleus is engineered to adhere to strict production-grade client security and browser environment stability protocols:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **XSS Metadata Defenses:** Strict reliance on native React state text interpolation to automatically HTML-escape asset strings, preventing malicious EXIF/metadata cross-site scripting vectors.
+2. **State Isolation:** Complete component memory localization via `useState`. The engine is completely isolated from URL manipulation or query-string poison injections.
+3. **Error Message Sanitization:** Execution flows are isolated inside try/catch wrappers that map detailed stack traces safely to internal development logs while outputting sanitized, human-friendly feedback strings to the client view.
+4. **Thread-Safe Web Workers:** Offloads resource-heavy mathematical pixel manipulations off the main browser UI thread using isolated web workers to prevent browser layout freezing.
+5. **Infrastructure DoS Ceilings:** Implements a hard 25MB raw asset block directly inside the dropzone loop to intercept system strain before engine computation.
+6. **Pixel-Bomb OOM Guardrail:** Evaluates dimensions on memory allocation; assets exceeding a 8,000px boundary matrix are safely rejected to completely prevent browser Out-Of-Memory tab crashing.
+7. **Active Garbage Collection Memory Leak Fix:** Prevents RAM bloat over heavy usage loops by explicitly calling `URL.revokeObjectURL()` on previous image preview blobs right before fresh encoding batches.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
+- **Framework:** Next.js (React)
+- **Styling:** Tailwind CSS
+- **Core Engine:** browser-image-compression
+- **Icons:** Lucide React
 
-## Learn More
+## 📦 Local Installation & Development
 
-To learn more about Next.js, take a look at the following resources:
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Codesmith-23/nucleus-compressor.git](https://github.com/Codesmith-23/nucleus-compressor.git)
+   cd nucleus-compressor
+   
+2. **Install dependencies:**
+   ```bash
+   npm install
+   
+3. **Run the development server:**
+  ```bash
+  npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
